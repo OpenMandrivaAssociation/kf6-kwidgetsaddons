@@ -1,6 +1,6 @@
 %define libname %mklibname KF6WidgetsAddons
 %define devname %mklibname KF6WidgetsAddons -d
-%define git 20230924
+%define git 20230927
 
 Name: kf6-kwidgetsaddons
 Version: 5.240.0
