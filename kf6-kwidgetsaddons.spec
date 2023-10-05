@@ -1,6 +1,6 @@
 %define libname %mklibname KF6WidgetsAddons
 %define devname %mklibname KF6WidgetsAddons -d
-%define git 20230927
+%define git 20231005
 
 Name: kf6-kwidgetsaddons
 Version: 5.240.0
@@ -81,7 +81,6 @@ Large set of desktop widgets
 %files -n %{devname}
 %{_includedir}/KF6/KWidgetsAddons
 %{_libdir}/cmake/KF6WidgetsAddons
-%{_qtdir}/mkspecs/modules/qt_KWidgetsAddons.pri
 %{_qtdir}/doc/KF6WidgetsAddons.*
 
 %files -n %{libname}
