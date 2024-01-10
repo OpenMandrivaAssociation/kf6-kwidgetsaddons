@@ -5,7 +5,7 @@
 #define git 20231103
 
 Name: kf6-kwidgetsaddons
-Version: 5.247.0
+Version: 5.248.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kwidgetsaddons/-/archive/master/kwidgetsaddons-master.tar.bz2#/kwidgetsaddons-%{git}.tar.bz2
@@ -82,7 +82,6 @@ Large set of desktop widgets
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kwidgetsaddons.*
-%{_datadir}/kf6/kcharselect
 
 %files -n %{devname}
 %{_includedir}/KF6/KWidgetsAddons
