@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kwidgetsaddons
-Version: 6.2.0
+Version: 6.2.2
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kwidgetsaddons/-/archive/master/kwidgetsaddons-master.tar.bz2#/kwidgetsaddons-%{git}.tar.bz2
@@ -34,6 +34,9 @@ BuildRequires: cmake(Qt6ToolsTools)
 BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6QuickTest)
 Requires: %{libname} = %{EVRD}
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+BuildOption:	-DBUILD_QCH:BOOL=ON
 
 %description
 Large set of desktop widgets
@@ -65,20 +68,7 @@ Development files (Headers etc.) for %{name}.
 
 Large set of desktop widgets
 
-%prep
-%autosetup -p1 -n kwidgetsaddons-%{?git:master}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
+%install -a
 %find_lang %{name} --all-name --with-qt --with-html
 
 %files -f %{name}.lang
