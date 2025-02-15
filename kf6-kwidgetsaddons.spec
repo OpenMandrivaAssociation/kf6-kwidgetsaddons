@@ -72,6 +72,14 @@ Development files (Headers etc.) for %{name}.
 
 Large set of desktop widgets
 
+%package -n python-kwidgetsaddons
+Summary: Python bindings to KWidgetsAddons
+Group: Development/Python
+Requires: %{libname} = %{EVRD}
+
+%description -n python-kwidgetsaddons
+Python bindings to KWidgetsAddons
+
 %install -a
 %find_lang %{name} --all-name --with-qt --with-html
 
@@ -85,6 +93,8 @@ Large set of desktop widgets
 
 %files -n %{libname}
 %{_libdir}/libKF6WidgetsAddons.so*
+
+%files -n python-kwidgetsaddons
 %{_libdir}/python*/site-packages/KWidgetsAddons.cpython-*.so
 
 %files -n %{libname}-designer
