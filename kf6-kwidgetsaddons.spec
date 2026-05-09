@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-kwidgetsaddons
-Version: 6.25.0
+Version: 6.26.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kwidgetsaddons/-/archive/master/kwidgetsaddons-master.tar.bz2#/kwidgetsaddons-%{git}.tar.bz2
@@ -95,6 +95,8 @@ Python bindings to KWidgetsAddons
 
 %files -n python-kwidgetsaddons
 %{_libdir}/python*/site-packages/KWidgetsAddons.cpython-*.so
+%{_includedir}/PySide6/KWidgetsAddons
+%{_datadir}/PySide6/typesystems/*
 
 %files -n %{libname}-designer
 %{_qtdir}/plugins/designer/kwidgetsaddons6widgets.so
